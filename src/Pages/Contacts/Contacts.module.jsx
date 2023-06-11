@@ -9,6 +9,7 @@ export const AddUserIcon = styled(FaUserPlus)`
 `;
 export const ContentPageContainer = styled.div`
   padding: 38px 48px;
+  height: 100vh;
 
   border-radius: 32px 32px 0 0;
   background-color: #f9f9f9;
