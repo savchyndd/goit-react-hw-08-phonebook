@@ -1,5 +1,18 @@
 import styled from '@emotion/styled';
 
+export const ContactNavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const Title = styled.h2`
+  margin: 0;
+`;
+
+export const FilterWrapper = styled.div`
+  display: flex;
+  margin-left: auto;
+`;
+
 export const Form = styled.form``;
 
 export const Label = styled.label`
@@ -26,8 +39,8 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  margin-top: 24px;
   padding: 1.063em 1.5em;
+  margin-left: 28px;
 
   background-color: #000000;
 

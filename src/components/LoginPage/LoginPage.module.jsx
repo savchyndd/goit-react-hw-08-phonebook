@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const Label = styled.label`
   display: flex;
@@ -18,10 +22,15 @@ export const Input = styled.input`
   color: #000000;
   background: #efefef;
   border-radius: 18px;
-  border-style: none;
+  border: 1px solid #efefef;
 
   :placeholder {
     color: #757575;
+  }
+
+  :hover,
+  :focus {
+    border: 1px solid #000000;
   }
 `;
 

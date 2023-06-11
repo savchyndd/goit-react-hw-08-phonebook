@@ -4,6 +4,12 @@ export const ContactItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 20px 30px;
+  margin-bottom: 12px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
 `;
 
 export const ContactName = styled.p`
@@ -16,8 +22,23 @@ export const ContactNumber = styled.span`
 `;
 
 export const Button = styled.button`
-  margin: 8px;
-  padding: 4px 14px;
-  border-radius: 5px;
+  padding: 0.563em 1em;
+  margin: 0.5em;
+  background-color: #000000;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(250, 187, 24, 0.1);
+  border-radius: 8px;
+
   cursor: pointer;
+
+  transition: background-color 1s ease;
+  transition: color 1s ease;
+
+  :hover,
+  :focus {
+    color: #000000;
+    background-color: rgba(250, 187, 24, 0.1);
+    border: 1px solid #000000;
+  }
 `;
