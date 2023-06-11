@@ -1,7 +1,7 @@
 import { useAuth } from 'hooks/useAuth';
 
 import Navigation from 'components/Navigation/Navigation';
-import UserNav from 'components/UserNav/UserNav';
+import UserMenu from 'components/UserMenu/UserMenu';
 import LoggedNav from 'components/LoggedNav/LoggedNav';
 
 import { Header } from './AppBar.module';
@@ -11,7 +11,7 @@ const AppBar = () => {
   return (
     <Header>
       <Navigation />
-      {isLoggedIn ? <UserNav /> : <LoggedNav />}
+      {isLoggedIn ? <UserMenu /> : <LoggedNav />}
     </Header>
   );
 };

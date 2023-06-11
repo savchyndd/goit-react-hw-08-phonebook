@@ -6,11 +6,11 @@ import {
   UserName,
   UserNavigarion,
   UserWrapper,
-} from './UserNav.module';
+} from './UserMenu.module';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 
-const UserNav = () => {
+const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
@@ -30,4 +30,4 @@ const UserNav = () => {
   );
 };
 
-export default UserNav;
+export default UserMenu;
