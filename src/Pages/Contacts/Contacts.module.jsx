@@ -1,10 +1,27 @@
 import styled from '@emotion/styled';
+import { FaUserPlus } from 'react-icons/fa';
 
+export const AddUserIcon = styled(FaUserPlus)`
+  width: 20px;
+  height: 20px;
+
+  fill: #fabb18;
+`;
+export const ContentPageContainer = styled.div`
+  padding: 38px 48px;
+
+  border-radius: 32px 32px 0 0;
+  background-color: #f9f9f9;
+`;
 export const ContactNavWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 28px;
 `;
 export const Title = styled.h2`
+  font-weight: 700;
+  font-size: 34px;
+
   margin: 0;
 `;
 
@@ -39,6 +56,14 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  font-weight: 700;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+
   padding: 1.063em 1.5em;
   margin-left: 28px;
 
@@ -50,13 +75,18 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  transition: background-color 1s ease;
-  transition: color 1s ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     color: #000000;
     background-color: rgba(250, 187, 24, 0.1);
     border: 1px solid #000000;
+    > svg {
+      fill: #000000;
+    }
   }
 `;

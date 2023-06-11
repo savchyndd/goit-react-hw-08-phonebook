@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Logo to="/home">
+      <Logo to="/">
         Phone<span>Book.</span>
       </Logo>
       <MainNav>

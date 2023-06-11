@@ -42,7 +42,7 @@ export const UserAvatar = styled.div`
   height: 58px;
 
   background-color: #efefef;
-  border-radius: 50%;
+  border-radius: 14px;
 `;
 export const LogOutBtn = styled.button`
   font-style: normal;

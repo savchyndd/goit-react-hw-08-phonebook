@@ -10,7 +10,6 @@ export const LoggedList = styled.ul`
 export const LoggedItem = styled.li``;
 export const LoggedLink = styled(NavLink)`
   display: block;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
 
@@ -21,9 +20,12 @@ export const LoggedLink = styled(NavLink)`
 
   border-radius: 14px;
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover,
   :focus {
     color: #000000;
-    background: rgba(250, 187, 24, 0.1);
+    background-color: rgba(250, 187, 24, 0.1);
   }
 `;

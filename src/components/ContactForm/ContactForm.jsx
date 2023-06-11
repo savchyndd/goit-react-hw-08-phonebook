@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectContactsList } from 'redux/constacts/selectors';
 import { addContact } from 'redux/constacts/operations';
 
-import { Form, Input, Label, Button } from './ContactForm.module';
+import { Form, Input, Label, Button, AddUserIcon } from './ContactForm.module';
 
-export const ContactForm = () => {
+export const ContactForm = ({ onCloseModal }) => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsList);
 
@@ -25,6 +25,7 @@ export const ContactForm = () => {
     }
 
     dispatch(addContact({ name: formName, number: formNumber.toString() }));
+    onCloseModal();
     form.reset();
   };
 
@@ -54,7 +55,10 @@ export const ContactForm = () => {
           value={contacts.number}
         />
       </Label>
-      <Button type="submit">Add New Contact</Button>
+      <Button type="submit">
+        <AddUserIcon />
+        New contact
+      </Button>
     </Form>
   );
 };

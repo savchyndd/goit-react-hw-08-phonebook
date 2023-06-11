@@ -1,6 +1,18 @@
 import styled from '@emotion/styled';
+import { FaUserPlus } from 'react-icons/fa';
 
-export const Form = styled.form``;
+export const AddUserIcon = styled(FaUserPlus)`
+  width: 20px;
+  height: 20px;
+
+  fill: #fabb18;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const Label = styled.label`
   display: flex;
@@ -26,6 +38,14 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  font-weight: 700;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+
   margin-top: 24px;
   padding: 1.063em 1.5em;
 
@@ -37,13 +57,19 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  transition: background-color 1s ease;
-  transition: color 1s ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     color: #000000;
     background-color: rgba(250, 187, 24, 0.1);
     border: 1px solid #000000;
+
+    > svg {
+      fill: #000000;
+    }
   }
 `;

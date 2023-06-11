@@ -12,7 +12,12 @@ export const Logo = styled(NavLink)`
   color: #000000;
   > span {
     color: #fabb18;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover,
   :focus {
     color: #fabb18;
@@ -26,8 +31,6 @@ export const MainNav = styled.nav``;
 export const MainNavList = styled.ul``;
 export const MainNavItem = styled.li``;
 export const MainNavLink = styled(NavLink)`
-  display: block;
-
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -37,6 +40,10 @@ export const MainNavLink = styled(NavLink)`
   color: #000000;
   background-color: #ffffff;
   border-radius: 18px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {

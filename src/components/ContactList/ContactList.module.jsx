@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const ContactsList = styled.ul`
-  padding: 0;
-  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-  list-style: none;
+  grid-gap: 24px;
 `;

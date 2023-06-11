@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Form = styled.form`
   display: flex;
@@ -28,6 +29,8 @@ export const Input = styled.input`
     color: #757575;
   }
 
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover,
   :focus {
     border: 1px solid #000000;
@@ -35,6 +38,9 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  font-weight: 600;
+  font-size: 18px;
+
   margin-top: 24px;
   padding: 1.063em 1.5em;
 
@@ -46,13 +52,26 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  transition: background-color 1s ease;
-  transition: color 1s ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     color: #000000;
     background-color: rgba(250, 187, 24, 0.1);
     border: 1px solid #000000;
+  }
+`;
+
+export const LoggedLink = styled(NavLink)`
+  margin-top: 8px;
+  color: #8f8f8f;
+
+  cursor: pointer;
+
+  :hover,
+  :focus {
+    color: #fabb18;
   }
 `;

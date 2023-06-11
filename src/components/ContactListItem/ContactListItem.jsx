@@ -9,6 +9,9 @@ import {
   ContactName,
   ContactNumber,
   Button,
+  UserIcon,
+  UserDeletedIcon,
+  PhoneIcon,
 } from './ContactListItem.module';
 
 export const ContactsListItem = ({ id, name, number }) => {
@@ -21,9 +24,17 @@ export const ContactsListItem = ({ id, name, number }) => {
   return (
     <ContactItem key={id}>
       <ContactName>
-        {name}: <ContactNumber>{number}</ContactNumber>
+        <UserIcon />
+        {name}
       </ContactName>
-      <Button onClick={() => handleDeleteContact(id)}>Delete</Button>
+      <ContactNumber>
+        <PhoneIcon />
+        {number}
+      </ContactNumber>
+      <Button onClick={() => handleDeleteContact(id)}>
+        <UserDeletedIcon />
+        Delete
+      </Button>
     </ContactItem>
   );
 };

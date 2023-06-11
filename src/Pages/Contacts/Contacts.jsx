@@ -9,11 +9,14 @@ import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { Filter } from '../../components/Filter/Filter';
 import { ContactList } from '../../components/ContactList/ContactList';
 import {
+  AddUserIcon,
   Button,
   ContactNavWrapper,
+  ContentPageContainer,
   FilterWrapper,
   Title,
 } from './Contacts.module';
+import { Modal } from 'components/Modal/Modal';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -25,18 +28,19 @@ const Contacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const handleClickBtn = () => {
+  const handleOpenModal = () => {
     setIsShowModalAddUser(prev => !prev);
   };
 
   return (
-    <>
+    <ContentPageContainer>
       <Section>
         <ContactNavWrapper>
           <Title>Contacts</Title>
           <FilterWrapper>
             <Filter />
-            <Button type="button" onClick={handleClickBtn}>
+            <Button type="button" onClick={handleOpenModal}>
+              <AddUserIcon />
               New Contact
             </Button>
           </FilterWrapper>
@@ -45,11 +49,16 @@ const Contacts = () => {
         <ContactList />
       </Section>
       {isShowModalAddUser && (
-        <Section title="Phonebook">
-          <ContactForm />
-        </Section>
+        <Modal
+          children={
+            <Section title="Add New Contact">
+              <ContactForm onCloseModal={handleOpenModal} />
+            </Section>
+          }
+          onCloseModal={handleOpenModal}
+        ></Modal>
       )}
-    </>
+    </ContentPageContainer>
   );
 };
 

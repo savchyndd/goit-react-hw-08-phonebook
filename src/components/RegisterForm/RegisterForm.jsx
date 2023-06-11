@@ -1,17 +1,19 @@
-import { NavLink } from 'react-router-dom';
-import { Form, Input, Label, Button } from './LoginPage.module';
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/auth/operations';
 
-const LoginPage = () => {
+import { register } from 'redux/auth/operations';
+
+import { Form, Input, Label, Button, LoggedLink } from './RegisterPage.module';
+
+const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const form = e.currentTarget;
+
     dispatch(
-      logIn({
+      register({
+        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -23,14 +25,25 @@ const LoginPage = () => {
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
+        Name
+        <Input
+          type="text"
+          name="name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          placeholder="Enter name ..."
+          required
+        />
+      </Label>
+      <Label>
         Email
         <Input
           type="email"
           name="email"
           pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
           title=""
-          required
           placeholder="Enter email ..."
+          required
         />
       </Label>
       <Label>
@@ -40,14 +53,14 @@ const LoginPage = () => {
           name="password"
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           title=""
-          required
           placeholder="Enter password ..."
+          required
         />
       </Label>
-      <Button type="submit">LogIn</Button>
-      <NavLink to="/register">Don`t have acount? Register</NavLink>
+      <Button type="submit">Register</Button>
+      <LoggedLink to="/login">Have acount? LogIn</LoggedLink>
     </Form>
   );
 };
 
-export default LoginPage;
+export default RegisterForm;
