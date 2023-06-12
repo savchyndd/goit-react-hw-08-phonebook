@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { ModalContent, Overlay } from './Modal.module';
 
-// import { SectionContainer, Title } from './Section.module';
-
 export const Modal = ({ children, onCloseModal }) => {
   useEffect(() => {
     const handleKeydown = e => {
@@ -34,4 +32,5 @@ export const Modal = ({ children, onCloseModal }) => {
 
 Modal.propTypes = {
   children: PropTypes.node,
+  onCloseModal: PropTypes.func,
 };

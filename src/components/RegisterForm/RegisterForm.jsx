@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
 import { Form, Input, Label, Button, LoggedLink } from './RegisterPage.module';
+import { Notify } from 'notiflix';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,14 @@ const RegisterForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
+    )
+      .unwrap()
+      .then(originalPromiseResult => {
+        Notify.success(`${originalPromiseResult.user.name} welcome!`);
+      })
+      .catch(() => {
+        Notify.failure("Sorry, something's wrong");
+      });
 
     form.reset();
   };
@@ -41,7 +49,7 @@ const RegisterForm = () => {
           type="email"
           name="email"
           pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
-          title=""
+          title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix. For example Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
           placeholder="Enter email ..."
           required
         />
@@ -52,7 +60,7 @@ const RegisterForm = () => {
           type="password"
           name="password"
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-          title=""
+          title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters. For example TgeV23592, 3Greioct."
           placeholder="Enter password ..."
           required
         />
